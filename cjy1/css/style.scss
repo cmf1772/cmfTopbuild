@@ -1,0 +1,113 @@
+@charset "UTF-8";
+@import url(../fonts/iconfont.css);
+body {
+    font-family:"Helvetica Neue",Helvetica,STHeiTi,sans-serif;
+ }
+a, img {
+	-webkit-touch-callout: none;
+}
+html, body {
+	-webkit-user-select: none;
+	user-select: none;
+}
+button,input,optgroup,select,textarea {
+	-webkit-appearance:none;
+}
+a,button,input,optgroup,select,textarea {
+	-webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+input::-webkit-input-placeholder {
+    color:#ccc;
+}
+input:focus::-webkit-input-placeholder {
+    color:#f00;
+}
+body {
+	-webkit-text-size-adjust:100%!important;
+}
+
+
+@mixin flex($h,$w,$flex,$row,$wrap){
+	width:$w;
+	height:$h;
+	display:$flex;
+	flex-flow:$row $wrap;
+}
+*{
+	padding:0;
+	margin:0;
+	list-style:none;
+	text-decoration:none;
+	box-sizing:border-box;
+	font-size:.14rem;
+}
+html,body{
+	@include flex(100%,100%,block,none,auto);
+	font-size:625%;
+	font-family:"微软雅黑";
+}
+
+
+@keyframes move{
+	0%{
+		transform:rotateX(15deg) rotateY(15deg);
+	}
+	50%{
+		transform:rotateX(15deg) rotateY(360deg);
+	}
+	100%{
+		transform:rotateX(15deg) rotateY(720deg);
+	}
+}
+
+ul{
+	width:360px;
+	height:360px;
+	//background:url(../img/4.jpg) no-repeat center;
+	//background-size:contain;
+	position:fixed;
+	left:0;
+	right:0;
+	bottom:0;
+	top:0;
+	margin:auto;
+	transform-style:preserve-3d;
+	transform:rotateX(10deg) rotateY(10deg);
+	animation:move 5s linear infinite;
+}
+ul li{
+	width:360px;
+	height:360px;
+	position:absolute;
+	transform-origin:center center -400px;
+	&:nth-child(1){
+		background:url(../img/5.jpg) no-repeat center;
+		background-size:contain;
+		transform:translateZ(400px) rotateY(0);
+	}
+	&:nth-child(2){
+		background:url(../img/6.jpg) no-repeat center;
+		background-size:contain;
+		transform:translateZ(400px) rotateY(60deg);
+	}
+	&:nth-child(3){
+		background:url(../img/7.jpg) no-repeat center;
+		background-size:contain;
+		transform:translateZ(400px) rotateY(120deg);
+	}
+	&:nth-child(4){
+		background:url(../img/8.jpg) no-repeat center;
+		background-size:contain;
+		transform:translateZ(400px) rotateY(180deg);
+	}
+	&:nth-child(5){
+		background:url(../img/9.jpg) no-repeat center;
+		background-size:contain;
+		transform:translateZ(400px) rotateY(240deg);
+	}
+	&:nth-child(6){
+		background:url(../img/10.jpg) no-repeat center;
+		background-size:contain;
+		transform:translateZ(400px) rotateY(300deg);
+	}
+}
